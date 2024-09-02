@@ -1,0 +1,41 @@
+# .github/workflows/jenkins-pipeline.yml
+name: Jenkins Pipeline Runner
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  jenkins-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Jenkins Environment
+      - name: Setup Jenkins
+        uses: jenkinsci/jfr-setup-action@master
+
+      # Step 3: Install Required Jenkins Plugins
+      - name: Install Jenkins Plugins
+        uses: jenkinsci/jfr-plugin-installation-action@master
+        with:
+          plugins-file: plugins.txt  # Ensure this file exists if using plugins
+
+      # Step 4: Run the Jenkins Pipeline
+      - name: Run Jenkins Pipeline
+        uses: jenkinsci/jfr-runtime-action@master
+        with:
+          jenkinsfile: Jenkinsfile  # Path to your Jenkinsfile
+          # Optionally specify other parameters like:
+          # - jenkins-arguments: '--arguments'
+          # - additional-plugins: 'plugin1,plugin2'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Add other environment variables if needed
