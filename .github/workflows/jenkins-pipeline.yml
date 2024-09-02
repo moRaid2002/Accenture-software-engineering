@@ -14,27 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      # Step 2: Setup Jenkins Environment
-      - name: Setup Jenkins
-        uses: jenkinsci/jfr-setup-action@master
-        env:
-            JENKINS_VERSION: '2.401.3'
-
-      # Step 3: Install Required Jenkins Plugins
-      - name: Install Jenkins Plugins
-        uses: jenkinsci/jfr-plugin-installation-action@master
-        with:
-          plugins-file: plugins.txt  # Ensure this file exists if using plugins
-
-      # Step 4: Run the Jenkins Pipeline
-      - name: Run Jenkins Pipeline
-        uses: jenkinsci/jfr-runtime-action@master
-        with:
-          jenkinsfile: Jenkinsfile  
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - uses: actions/checkout@master
+        - name: jenkinsfile-runner-prepackaged
+          uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
