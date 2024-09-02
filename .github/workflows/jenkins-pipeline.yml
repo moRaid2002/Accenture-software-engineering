@@ -1,34 +1,11 @@
-# .github/workflows/jenkins-pipeline.yml
-name: Jenkins Pipeline Runner
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+on: push
+name: Jenkins single-shot master
 jobs:
-  jenkins-pipeline:
+  jenkinsfile-runner-prepackaged:
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
-        uses: actions/checkout@master
-
-      # Step 2: Setup Jenkins Environment
-      - name: Setup Jenkins
-        uses: jenkinsci/jfr-setup-action@master
-        with:
-            jenkins-version: '2.401.3'
-
-      # Step 4: Run the Jenkins Pipeline
-      - name: Run Jenkins Pipeline
-        uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
-        with:
-          jenkinsfile: Jenkinsfile  
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+    - uses: actions/checkout@master
+    - name: jenkinsfile-runner-prepackaged
+      uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
