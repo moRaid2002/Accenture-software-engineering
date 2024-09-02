@@ -24,11 +24,11 @@ jobs:
         with:
             jenkins-version: '2.401.3'
 
-      # Step 4: Run the Jenkins Pipeline
-      - name: Run Jenkins Pipeline
-        uses: jenkinsci/jfr-runtime-action@master
-        with:
-          jenkinsfile: Jenkinsfile  
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       # Step 3: Run the Jenkins Pipeline
+       - name: Run Jenkins Pipeline
+       uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
+       with:
+         jenkinsfile: Jenkinsfile  # Path to your Jenkinsfile
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
