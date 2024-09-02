@@ -21,6 +21,8 @@ jobs:
       # Step 2: Setup Jenkins Environment
       - name: Setup Jenkins
         uses: jenkinsci/jfr-setup-action@master
+        env:
+            JENKINS_VERSION: '2.401.3'
 
       # Step 3: Install Required Jenkins Plugins
       - name: Install Jenkins Plugins
@@ -32,10 +34,7 @@ jobs:
       - name: Run Jenkins Pipeline
         uses: jenkinsci/jfr-runtime-action@master
         with:
-          jenkinsfile: Jenkinsfile  # Path to your Jenkinsfile
-          # Optionally specify other parameters like:
-          # - jenkins-arguments: '--arguments'
-          # - additional-plugins: 'plugin1,plugin2'
+          jenkinsfile: Jenkinsfile  
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Add other environment variables if needed
+          
