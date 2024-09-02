@@ -1,17 +1,18 @@
 name: Jenkins single-shot master
-
 on: push
 
 jobs:
   jenkinsfile-runner-prepackaged:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run Jenkinsfile Runner
-      uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@v1
-      with:
-        jenkinsfile: Jenkinsfile
-        pluginstxt: plugins.txt
-        command: run
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Jenkinsfile Runner
+        uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
+        with:
+          jenkinsfile: Jenkinsfile       
+          pluginstxt: plugins.txt        
+          command: run                   
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
