@@ -14,9 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        - uses: actions/checkout@master
-        - name: jenkinsfile-runner-prepackaged
-          uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@master
+
+      # Step 2: Setup Jenkins Environment
+      - name: Setup Jenkins
+        uses: jenkinsci/jfr-setup-action@master
+        with:
+            jenkins-version: '2.401.1'
+      # Step 4: Run the Jenkins Pipeline
+      - name: Run Jenkins Pipeline
+        uses: jenkinsci/jfr-runtime-action@master
+        with:
+          jenkinsfile: Jenkinsfile  
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
