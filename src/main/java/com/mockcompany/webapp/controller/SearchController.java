@@ -16,6 +16,8 @@ package com.mockcompany.webapp.controller;
  */
 import com.mockcompany.webapp.data.ProductItemRepository;
 import com.mockcompany.webapp.model.ProductItem;
+import com.mockcompany.webapp.service.SearchService;
+
 /* The springframework package allows us to take advantage of the spring capabilities */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,11 +49,11 @@ public class SearchController {
      * @Autowired annotation.  Autowire tells the spring framework to automatically find and use an instance of
      * the declared class when creating this class.
      */
-    private final ProductItemRepository productItemRepository;
+    private final SearchService searchService;
 
     @Autowired
-    public SearchController(ProductItemRepository productItemRepository) {
-        this.productItemRepository = productItemRepository;
+    public SearchController(SearchService searchService) {
+        this.searchService = searchService;
     }
 
     /**
@@ -80,26 +82,6 @@ public class SearchController {
          *  For an added challenge, update the ProductItemRepository to do the filtering at the database layer :)
          */
 
-        Iterable<ProductItem> allItems = this.productItemRepository.findAll();
-        List<ProductItem> itemList = new ArrayList<>();
-        boolean isExactMatch = query.startsWith("\"") && query.endsWith("\"");
-        if (isExactMatch) query = query.substring(1, query.length()-1);
-
-        // This is a loop that the code inside will execute on each of the items from the database.
-        for (ProductItem item : allItems) {
-            // TODO: Figure out if the item should be returned based on the query parameter!
-            String name = item.getName().toLowerCase();
-            String des = item.getDescription().toLowerCase();
-            String lowerQuery = query.toLowerCase();
-            if(isExactMatch){
-                if (name.equals(lowerQuery) || des.equals(lowerQuery)) itemList.add(item);
-            }else{
-                if(name.contains(lowerQuery)|| des.contains(lowerQuery)) itemList.add(item);
-            }
-            
-            
-            
-        }
-        return itemList;
+        return searchService.search(query);
     }
 }

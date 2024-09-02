@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.527s</div>
+<div class="counter">0.044s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">search is case insensitive</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">search will only match exactly on name or description when quotes are used</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -94,22 +94,22 @@
 </tr>
 <tr>
 <td class="success">search will return an item that matches the name of the product</td>
-<td class="success">2.491s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">search will return items if name or description match the search</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">search will return multiple items when there are matches in the description</td>
-<td class="success">0.007s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">search will return multiple items when there are matches in the name</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -117,61 +117,12 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>04:52:21.806 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.809 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.809 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.809 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.812 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.812 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.812 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.812 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.812 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.812 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.813 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.813 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.813 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.813 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.813 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.813 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.815 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-04:52:21.820 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-04:52:21.827 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.mockcompany.webapp.controller.SearchControllerSpec] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-04:52:21.833 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.mockcompany.webapp.controller.SearchControllerSpec], using SpringBootContextLoader
-04:52:21.835 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.mockcompany.webapp.controller.SearchControllerSpec]: class path resource [com/mockcompany/webapp/controller/SearchControllerSpec-context.xml] does not exist
-04:52:21.835 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.mockcompany.webapp.controller.SearchControllerSpec]: class path resource [com/mockcompany/webapp/controller/SearchControllerSpecContext.groovy] does not exist
-04:52:21.835 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.mockcompany.webapp.controller.SearchControllerSpec]: no resource found for suffixes {-context.xml, Context.groovy}.
-04:52:21.835 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mockcompany.webapp.controller.SearchControllerSpec]: SearchControllerSpec does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-04:52:21.866 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.mockcompany.webapp.controller.SearchControllerSpec]
-04:52:21.918 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/mouhamedraid/Documents/GitHub/Accenture-software-engineering/build/classes/java/main/com/mockcompany/webapp/Application.class]
-04:52:21.919 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mockcompany.webapp.Application for test class com.mockcompany.webapp.controller.SearchControllerSpec
-04:52:21.971 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.mockcompany.webapp.controller.SearchControllerSpec]: using defaults.
-04:52:21.972 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.spockframework.spring.SpringMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-04:52:21.981 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64ba3208, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@158a3b2e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@25a6944c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e1fa5b1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b00f608, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f17e30d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e821657, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1d131e1b, org.springframework.test.context.event.EventPublishingTestExecutionListener@71cf1b07, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@615091b8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4fce136b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4aa83f4f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@43b6123e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@260e86a1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@19648c40, org.spockframework.spring.SpringMockTestExecutionListener@12bd8a64]
-04:52:22.085 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@62c5bbdc testClass = SearchControllerSpec, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7bdf6bb7 testClass = SearchControllerSpec, locations = '{}', classes = '{class com.mockcompany.webapp.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.spockframework.spring.mock.SpockContextCustomizer@0, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@9816741, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5c86dbc5, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@60db1c0e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@41f69e84, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@68746f22, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@37858383], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-04:52:22.105 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v2.5.1)
-
-2024-09-02 04:52:22.287  INFO 17604 --- [    Test worker] c.m.w.controller.SearchControllerSpec    : Starting SearchControllerSpec using Java 21.0.2 on Mouhameds-MacBook-Air.local with PID 17604 (/Users/mouhamedraid/Documents/GitHub/Accenture-software-engineering/build/classes/groovy/test started by mouhamedraid in /Users/mouhamedraid/Documents/GitHub/Accenture-software-engineering)
-2024-09-02 04:52:22.289  INFO 17604 --- [    Test worker] c.m.w.controller.SearchControllerSpec    : No active profile set, falling back to default profiles: default
-2024-09-02 04:52:22.638  INFO 17604 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-02 04:52:22.666  INFO 17604 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interfaces.
-2024-09-02 04:52:22.914  INFO 17604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-02 04:52:23.022  INFO 17604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-02 04:52:23.116  INFO 17604 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-02 04:52:23.172  INFO 17604 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2024-09-02 04:52:23.248  INFO 17604 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-09-02 04:52:23.302  INFO 17604 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2024-09-02 04:52:23.610  INFO 17604 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-09-02 04:52:23.615  INFO 17604 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-02 04:52:23.984  WARN 17604 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-02 04:52:24.374  INFO 17604 --- [    Test worker] c.m.w.controller.SearchControllerSpec    : Started SearchControllerSpec in 2.265 seconds (JVM running for 3.009)
+<pre>2024-09-02 05:31:17.228  INFO 34697 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.mockcompany.webapp.controller.SearchControllerSpec], using SpringBootContextLoader
+2024-09-02 05:31:17.228  INFO 34697 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.mockcompany.webapp.controller.SearchControllerSpec]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-09-02 05:31:17.228  INFO 34697 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mockcompany.webapp.controller.SearchControllerSpec]: SearchControllerSpec does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-09-02 05:31:17.229  INFO 34697 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mockcompany.webapp.Application for test class com.mockcompany.webapp.controller.SearchControllerSpec
+2024-09-02 05:31:17.230  INFO 34697 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.spockframework.spring.SpringMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-09-02 05:31:17.230  INFO 34697 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6ba19932, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@42f9b425, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@37351baa, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79de00af, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1ed17eaf, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1106a9cc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@ef1080d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@723aa04, org.springframework.test.context.event.EventPublishingTestExecutionListener@12128849, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@367e0b0e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3049dcac, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2a20332b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2cf6b6e6, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6a16ee0d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1444e35f, org.spockframework.spring.SpringMockTestExecutionListener@3f563397]
 </pre>
 </span>
 </div>
@@ -183,7 +134,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 2 Sept 2024, 04:52:25</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 2 Sept 2024, 05:31:17</p>
 </div>
 </div>
 </body>

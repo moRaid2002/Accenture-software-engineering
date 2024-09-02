@@ -2,6 +2,8 @@ package com.mockcompany.webapp.controller;
 
 import com.mockcompany.webapp.api.SearchReportResponse;
 import com.mockcompany.webapp.model.ProductItem;
+import com.mockcompany.webapp.service.SearchService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,10 +27,12 @@ public class ReportController {
      * The people that wrote this code didn't know about JPA Spring Repository interfaces!
      */
     private final EntityManager entityManager;
+    private final SearchService searchService;
 
     @Autowired
-    public ReportController(EntityManager entityManager) {
+    public ReportController(EntityManager entityManager, SearchService searchService) {
         this.entityManager = entityManager;
+        this.searchService = searchService;
     }
 
 
@@ -66,17 +70,10 @@ public class ReportController {
         response.setProductCount(count);
 
         List<ProductItem> allItems = entityManager.createQuery("SELECT item FROM ProductItem item").getResultList();
-        int kidCount = 0;
-        int perfectCount = 0;
+        int kidCount = searchService.search("kids").size();
+        int perfectCount = searchService.search("perfect").size();
         Pattern kidPattern = Pattern.compile("(.*)[kK][iI][dD][sS](.*)");
-        for (ProductItem item : allItems) {
-            if (kidPattern.matcher(item.getName()).matches() || kidPattern.matcher(item.getDescription()).matches()) {
-                kidCount += 1;
-            }
-            if (item.getName().toLowerCase().contains("perfect") || item.getDescription().toLowerCase().contains("perfect")) {
-                perfectCount += 1;
-            }
-        }
+        
         response.getSearchTermHits().put("Kids", kidCount);
 
         response.getSearchTermHits().put("Amazing", entityManager.createQuery("SELECT item FROM ProductItem item where lower(concat(item.name, ' - ', item.description)) like '%amazing%'").getResultList().size());
